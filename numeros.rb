@@ -1,7 +1,12 @@
-lineas = ARGV[0]
+lineas = ARGV[0].to_i
+i = 1
 
-lineas.times do |i|
-    while i < lineas do
-        print i
+for i in 1..lineas do 
+    x = 1 
+    while x < i
+        print x
+        x += 1     
     end
+    print "#{i} "
 end
+
