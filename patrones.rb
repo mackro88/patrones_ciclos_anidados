@@ -13,6 +13,16 @@ def letra_o(n)
 end
 
 def letra_i(n)
+    blank = (n-1)/2
+    n.times{|i| print "*"}
+    print "\n"
+    for x in 2..n do
+        blank.times{|i| print " "}
+        print "*"
+        blank.times{|i| print " "}
+        print "\n"
+    end
+    n.times{|i| print "*"} 
 end
 
 def letra_z(n)
@@ -28,8 +38,13 @@ def navidad(n)
 end
 
 letra_o(n)
-letra_i(n)
+print "\n"
+letra_i(n)    
+print "\n"
 letra_z(n)
+print "\n"
 letra_x(n)
+print "\n"
 numero_cero(n)
+print "\n"
 navidad(n)
