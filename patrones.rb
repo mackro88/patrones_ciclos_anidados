@@ -26,6 +26,15 @@ def letra_i(n)
 end
 
 def letra_z(n)
+    blank = n-2
+    n.times{|i| print "*"}
+    print "\n"
+    while blank != 0 do
+        blank.times{|i| print " "}
+        print "*\n"
+        blank -= 1
+    end
+    n.times{|i| print "*"}
 end
 
 def letra_x(n)
