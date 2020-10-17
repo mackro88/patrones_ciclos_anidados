@@ -81,15 +81,54 @@ def letra_x(n)
     end
     print "*"
     inner.times{|i| print " "}
-    print "*\n"
-
-
+    print "*"
 end
 
 def numero_cero(n)
+    blank = n-3
+    center = n-4
+    l = 1
+    r = n-4
+    ##
+    n.times{|i| print "*"}
+    ##
+    print "\n**"
+    blank.times{|i| print " "}
+    print "*\n"
+    ##
+    center.times do
+        print "*"
+        l.times{|i| print " "}
+        print "*"
+        r.times{|i| print " "}
+        print "*\n"
+        l += 1
+        r -= 1
+    end
+    print "*"
+    blank.times{|i| print " "}
+    print "**\n"
+    n.times{|i| print "*"} 
 end
 
 def navidad(n)
+    blank = n-2
+    l = blank
+    dot = 1
+    arrow = n-1
+    line = n-3
+    arrow.times do
+        l.times{|i| print " "}
+        dot.times{|i| print "* "}
+        l -= 1
+        dot += 1
+        print "\n"
+    end
+    line.times do
+        blank.times{|i| print " "}
+        print "*\n"
+    end
+    blank.times{|i| print " *"}
 end
 
 if n >= 3
@@ -110,18 +149,22 @@ if n > 3
 else
     print "El número debe ser mayor a 3 para generar la forma Z \n"
 end
-if n.odd? && n >= 3
+if n.odd? && n > 2
     letra_x(n)
     print "\n"
 elsif n.even? 
     print "El número debe ser impar para generar la forma X \n"
 else n < 3 
-    print "El número debe ser mayor o igual a 3 para generar la forma X \n"
+    print "El número debe ser mayor a 2 para generar la forma X \n"
 end
-
-numero_cero(n)
-print "\n"
-
-=begin
-navidad(n)
-=end
+if n > 3
+    numero_cero(n)
+    print "\n"
+else
+    print "El número debe ser mayor a 3 para generar la forma Z \n"
+end
+if n > 3
+    navidad(n)
+else
+    print "El número debe ser mayor a 3 para generar la forma Árbol de navidad \n"
+end
